@@ -10,7 +10,7 @@ redis:
 
 app:
   repository: public.ecr.aws/r9n4c1b3/kimch-lab2
-  tag: version3
+  tag: version4
   replicas: 1
 
 nginx:
