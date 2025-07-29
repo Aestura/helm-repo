@@ -1,0 +1,28 @@
+db:
+  repository: public.ecr.aws/r9n4c1b3/kimch-lab2
+  tag: db-v1
+  replicas: 1
+
+redis:
+  repository: public.ecr.aws/r9n4c1b3/kimch-lab2
+  tag: redis-v1
+  replicas: 1
+
+app:
+  repository: public.ecr.aws/r9n4c1b3/kimch-lab2
+  tag: app-v1
+  replicas: 1
+
+nginx:
+  repository: nginx
+  tag: latest
+  replicas: 1
+
+
+ingress:
+  healthCheckPath: /healthz
+  host: app.kimcheolhwan.store
+  certificateArn: arn:aws:acm:ap-northeast-1:504301552141:certificate/4de06385-8ba2-4bfb-a66e-cc21421b52a2
+  group:
+    name: shared-alb
+    order: "10"
